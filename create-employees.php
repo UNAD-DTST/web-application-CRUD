@@ -43,10 +43,10 @@ include('includes/footer.php');
                     <label for="input-phone">Phone</label>
                 </div>
 
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="input-photo" class="form-label">Photo</label>
                     <input class="form-control" type="file" name="input-photo" id="input-photo">
-                </div>
+                </div> -->
                 <button type="submit" class="btn btn-primary" name="create_employee">Submit</button>
             </form>
         </div>

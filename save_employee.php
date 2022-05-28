@@ -12,8 +12,6 @@ if (isset($_POST["create_employee"])) {
     $address = $_POST['input-address'];
     $phone = $_POST['input-phone'];
 
-    // $photo = $_POST['input-photo'];
-
     if (!empty($_FILES["input-photo"]["name"])) {
         // Get file info 
         $fileName = basename($_FILES["input-photo"]["name"]);
@@ -30,11 +28,14 @@ if (isset($_POST["create_employee"])) {
     // Query to upload employee info into DB
     $query = "INSERT INTO employees (email, identification, name, surname, title, address, phone, photo)
     VALUES ('$email', '$identification', '$name', '$surname', '$title', '$address', '$phone', '{$imgContent}')";
-    $result = mysqli_query($conection, $query);
+    $result = mysqli_query($connection, $query);
     var_dump($result);
     if (!$result) {
         die("Query Failed");
     }
+
+    $_SESSION['message'] = 'Employee Saved Sucessfully';
+    $_SESSION['message_type'] = 'success';
 
     //Redirect
     header("Location: employees.php");

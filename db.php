@@ -1,7 +1,9 @@
 <?php
 
+session_start();
+
 // Connection to DB
-$conection = mysqli_connect(
+$connection = mysqli_connect(
     'localhost',
     'root',
     'secret',
